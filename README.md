@@ -1,9 +1,9 @@
 ## Fork of TensorFlowSharp with a example running on iOS
 
-Before you run anything you need to download two files protobuf.a and libtensorflow-core.a and move them
-to TensorFlowSharp/TensorFlowSharp.iOS folder.
+The example is present in Examples/FastStyleTransferIOS.
 
-These are the two tensorflow compiled static libraries for iOS.
+Before you run anything you need to download two files protobuf.a and libtensorflow-core.a and move them
+to TensorFlowSharp/TensorFlowSharp.iOS folder. They are the two tensorflow compiled static libraries for iOS.
 
 Link:
 ```
