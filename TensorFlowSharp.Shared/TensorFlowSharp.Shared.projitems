@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{3BFF2EC2-5DD9-4706-BDE9-3A022BB0467D}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>TensorFlowSharpML</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Buffer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Operations.g.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OperationsExtras.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tensor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tensorflow.cs" />
+  </ItemGroup>
+</Project>

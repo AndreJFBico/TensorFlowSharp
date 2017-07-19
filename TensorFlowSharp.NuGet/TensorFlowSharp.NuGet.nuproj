@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(NuGetAuthoringPath)\NuGet.Packaging.Authoring.props" Condition="Exists('$(NuGetAuthoringPath)\NuGet.Packaging.Authoring.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1BE9F868-AB3B-4B5A-A955-1992406882E1}</ProjectGuid>
+    <Description>TensorFlowSharp</Description>
+    <PackageId>TensorFlowSharp</PackageId>
+    <PackageVersion>1.0.0</PackageVersion>
+    <Authors>Miguel de Icaza</Authors>
+    <DevelopmentDependency>false</DevelopmentDependency>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>TensorFlowSharpML</RootNamespace>
+    <UsePartialTypes>false</UsePartialTypes>
+    <AssemblyName>TensorFlowSharpML.NuGet</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <ReleaseVersion>0.2</ReleaseVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <OutputPath>bin\Debug</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="NuGet.Build.Packaging">
+      <Version>0.1.276</Version>
+      <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TensorFlowSharp.iOS\TensorFlowSharp.iOS.csproj">
+      <Project>{CC826D84-BED4-4860-BB6D-046AD57BDE9D}</Project>
+      <Name>TensorFlowSharp.iOS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TensorFlowSharp.Android\TensorFlowSharp.Android.csproj">
+      <Project>{65377811-0F9A-4766-AE58-1E53217CE18E}</Project>
+      <Name>TensorFlowSharp.Android</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TensorFlowSharp\TensorFlowSharp.csproj">
+      <Project>{0264C321-34F4-46AF-819E-168D1E597232}</Project>
+      <Name>TensorFlowSharp</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.Common.targets" />
+  <Import Project="$(NuGetAuthoringPath)\NuGet.Packaging.Authoring.targets" Condition="Exists('$(NuGetAuthoringPath)\NuGet.Packaging.Authoring.targets')" />
+</Project>

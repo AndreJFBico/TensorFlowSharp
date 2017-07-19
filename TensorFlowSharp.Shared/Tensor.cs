@@ -55,6 +55,7 @@ namespace TensorFlow
 			Marshal.FreeHGlobal (data);
 		}
 
+		[MonoPInvokeCallback(typeof(Deallocator))]
 		internal static void FreeTensorHandle (IntPtr data, IntPtr len, IntPtr closure)
 		{
 			var gch = GCHandle.FromIntPtr (closure);

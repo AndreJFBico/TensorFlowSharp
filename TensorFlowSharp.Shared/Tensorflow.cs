@@ -1,4 +1,4 @@
-﻿﻿//
+﻿//
 // TensorFlow.cs; Bindings to the TensorFlow C API for .NET
 // 
 // Authors:
@@ -40,7 +40,13 @@ namespace TensorFlow
 {
 	static partial class NativeBinding
 	{
+#if __IOS__
+            	public const string TensorFlowLibrary = "__Internal";
+#elif __ANDROID__
 		public const string TensorFlowLibrary = "libtensorflow";
+#else
+		public const string TensorFlowLibrary = "libtensorflow";
+#endif
 
 		internal static string GetStr (this IntPtr x) => Marshal.PtrToStringAnsi (x);
 
